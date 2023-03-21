@@ -1,0 +1,20 @@
+@model Questao
+
+<h1>Detalhes da Questão</h1>
+
+<div>
+    <h4>Enunciado:</h4>
+    <p>@Model.Enunciado</p>
+</div>
+
+<div>
+    <h4>Resposta:</h4>
+    <p>@Model.Resposta</p>
+</div>
+
+<div>
+    <h4>Matéria:</h4>
+    <p>@Model.Materia.Nome</p>
+</div>
+
+<a asp-action="Index">Voltar para a lista</a>

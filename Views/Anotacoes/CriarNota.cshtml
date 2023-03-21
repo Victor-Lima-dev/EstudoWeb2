@@ -1,0 +1,33 @@
+@{
+    ViewData["Title"] = "Criar Nota";
+}
+
+<div class="container mt-5">
+    <h1 class="mb-4">Criar Nota</h1>
+
+    <form asp-action="Criar" method="post">
+        <div class="form-group">
+            <label for="titulo">Título:</label>
+            <input type="text" class="form-control" id="titulo" name="Titulo">
+        </div>
+
+        <div class="form-group">
+            <label for="conteudo">Conteúdo:</label>
+            <textarea class="form-control" id="conteudo" name="Conteudo"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="materia">Matéria:</label>
+            <select class="form-control" id="materia" name="materiaId">
+                @foreach (var materia in ViewData["Materias"] as List<Materia>)
+                {
+                    <option value="@materia.MateriaId">@materia.Nome</option>
+                    
+                }
+            </select>
+            
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+</div>

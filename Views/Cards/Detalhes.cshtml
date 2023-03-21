@@ -1,0 +1,16 @@
+@model Card
+
+<h1>Detalhes do Card</h1>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Enunciado</h5>
+        <p class="card-text">@Model.Resposta</p>
+        <p class="card-text"><b>Materia:</b> @Model.Materia.Nome</p>
+        <a href="@Url.Action("Editar", new { id = Model.CardId })" class="btn btn-primary">Editar</a>
+        <form asp-action="Deletar" method="post">
+            <input type="hidden" name="id" value="@Model.CardId" />
+            <button type="submit" class="btn btn-danger">Deletar</button>
+        </form>
+    </div>
+</div>

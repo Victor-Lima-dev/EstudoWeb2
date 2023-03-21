@@ -1,0 +1,40 @@
+@model IEnumerable<Questao>
+
+@{
+    ViewData["Title"] = "Lista de Questões";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="CriarQuestao">Criar nova questão</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Enunciado</th>
+            <th>Matéria</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var questao in Model)
+        {
+            <tr>
+                <td>@questao.QuestaoId</td>
+                <td>@questao.Enunciado</td>
+                <td>@(questao.Materia != null ? questao.Materia.Nome : "")</td>
+                <td>
+                    <a asp-action="Detalhes" asp-route-id="@questao.QuestaoId">Detalhes</a> |
+                    <a asp-action="Editar" asp-route-id="@questao.QuestaoId">Editar</a> |
+                    <form asp-action="Deletar" method="post" onsubmit="return confirm('Tem certeza que deseja excluir essa questão?')">
+                        <input type="hidden" name="id" value="@questao.QuestaoId" />
+                        <button type="submit" class="link-button">Excluir</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

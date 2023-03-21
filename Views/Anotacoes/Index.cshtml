@@ -1,0 +1,26 @@
+@model List<Anotacao>
+
+@{
+    ViewData["Title"] = "Minhas Anotações";
+}
+
+<div class="container mt-5">
+    <h1 class="mb-4">Minhas Anotações</h1>
+
+    <div class="row">
+        @foreach (var anotacao in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@anotacao.Titulo</h5>
+                        <p class="card-text">@anotacao.Conteudo</p>
+                        <a asp-action="Detalhes" asp-route-id="@anotacao.AnotacaoId"  class="card-link">Detalhes</a>
+                        <a asp-action="Editar" asp-route-id="@anotacao.AnotacaoId" class="card-link">Editar</a>
+                    </div>
+                </div>
+            </div>
+        }
+        <a asp-action="CriarNota" class="btn btn-primary">Criar Nota</a>
+    </div>
+</div>

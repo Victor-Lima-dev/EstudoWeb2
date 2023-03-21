@@ -1,0 +1,25 @@
+@model IEnumerable<Card>
+
+<div class="row">
+    <a asp-action="CriarCard" class="btn btn-primary">Criar</a>
+    @foreach (var card in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@card.Enunciado</h5>
+                    <p class="card-text">@card.Resposta</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">@card.Materia.Nome</small>
+                </div>
+                <a asp-action="Editar" asp-route-id="@card.CardId" class="btn btn-primary">Editar</a>
+                <a asp-action="Detalhes" asp-route-id="@card.CardId" class="btn btn-primary">Detalhes</a>
+                <form asp-action="Deletar" method="post">
+                    <input type="hidden" name="cardId" value=@card.CardId>
+                    <button type="submit" class="btn btn-danger">Excluir</button>
+                    </form>
+            </div>
+        </div>
+    }
+</div>

@@ -7,13 +7,13 @@ Com o EstudoWeb, é possível criar anotações, cards e questões, e associá-l
 Este é um projeto de código aberto, o que significa que qualquer pessoa pode contribuir com ideias, sugestões e melhorias no código. A ideia é que o EstudoWeb se torne uma plataforma colaborativa, onde estudantes e professores possam compartilhar materiais de estudo e contribuir para a melhoria da aplicação.
 
 ## Funcionalidades
-- [ ] Criar anotações sobre uma matéria específica
+- [x] Criar anotações sobre uma matéria específica
 
-- [ ] Criar cards para memorização de conceitos importantes
+- [x] Criar cards para memorização de conceitos importantes
 
-- [ ] Criar questões para simulados
+- [x] Criar questões para simulados
 
-- [ ] Associar anotações, cards e questões a uma matéria específica
+- [x] Associar anotações, cards e questões a uma matéria específica
 
 - [ ] Criar simulados com questões aleatórias das matérias selecionadas
 
